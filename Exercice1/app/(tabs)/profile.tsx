@@ -1,29 +1,52 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 export default function ProfileScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-      <Text style={styles.subtitle}>Your personal information</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <View style={styles.avatarContainer}>
+          <Text style={styles.avatarText}>JD</Text>
+        </View>
+        <Text style={styles.name}>John Doe</Text>
+        <Text style={styles.email}>john.doe@example.com</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#E5F6FF', // Light blue background
+  },
+  content: {
+    flex: 1,
+    padding: 20,
     alignItems: 'center',
-    backgroundColor: '#FFF3E0', // Light orange background
+    justifyContent: 'center',
   },
-  title: {
-    fontSize: 32,
+  avatarContainer: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: '#007AFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+  avatarText: {
+    fontSize: 36,
+    color: '#FFFFFF',
     fontWeight: 'bold',
-    color: '#E65100', // Dark orange text
-    marginBottom: 8,
   },
-  subtitle: {
-    fontSize: 18,
-    color: '#F57C00', // Medium orange text
+  name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
+  email: {
+    fontSize: 16,
+    color: '#666',
   },
 });

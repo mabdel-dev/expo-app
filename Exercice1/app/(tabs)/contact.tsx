@@ -1,29 +1,38 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 export default function ContactScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Contact Us</Text>
-      <Text style={styles.subtitle}>Get in touch with our team</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.title}>Contact Us</Text>
+        <Text style={styles.text}>Email: contact@example.com</Text>
+        <Text style={styles.text}>Phone: +212 655 987 432</Text>
+        <Text style={styles.text}>Address: 123 Main Street, City, Country</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#FFE5E5', // Light red background
+  },
+  content: {
+    flex: 1,
+    padding: 20,
     alignItems: 'center',
-    backgroundColor: '#E3F2FD', // Light blue background
+    justifyContent: 'center',
   },
   title: {
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#1565C0', // Dark blue text
-    marginBottom: 8,
+    marginBottom: 20,
+    color: '#333',
   },
-  subtitle: {
-    fontSize: 18,
-    color: '#1976D2', // Medium blue text
+  text: {
+    fontSize: 16,
+    marginBottom: 10,
+    color: '#666',
   },
 });
